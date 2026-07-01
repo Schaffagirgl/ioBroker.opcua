@@ -94,7 +94,7 @@ function startAdapter(options) {
                 }
             }
             // you can use the ack flag to detect if state is desired or acknowledged
-            if ((adapter.config.sendAckToo || !state.ack) && !messageboxRegex.test(id)) {
+            if (state && (adapter.config.sendAckToo || !state.ack) && !messageboxRegex.test(id)) {
                 const oldVal = states[id] ? states[id].val : null;
                 const oldAck = states[id] ? states[id].ack : null;
 
